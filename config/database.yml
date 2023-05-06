@@ -1,0 +1,16 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: puntos_point_development
+test:
+  <<: *default
+  database: puntos_point_test
+production:
+  <<: *default
+  database: puntos_point_production
+  username: puntos_point
+  password: <%= ENV["PUNTOS_POINT_DATABASE_PASSWORD"] %>
