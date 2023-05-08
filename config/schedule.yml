@@ -1,0 +1,4 @@
+report_mailer_job:
+  cron: "* 1 * * *"
+  class: "ReportMailerJob"
+  queue: default
