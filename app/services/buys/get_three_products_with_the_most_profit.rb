@@ -5,7 +5,7 @@ module Buys
         categories: @categories.map do |category|
           {
             name: category.name,
-            products: products(category).map do |product|
+            products: Buy.most_purchased_products_by_category(category).first(3).map do |product|
               {
                 name: Product.find(product[0]).name,
                 total_profit: product[1] * Product.find(product[0]).price
@@ -14,12 +14,6 @@ module Buys
           }
         end
       }
-    end
-
-    private
-
-    def products(category)
-      Buy.get_three_products_with_the_most_profit_by_category(category)
     end
   end
 end

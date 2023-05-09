@@ -20,5 +20,14 @@ gem 'connection_pool', '~> 2.4'
 group :development, :test do
   gem "byebug"
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem 'rspec-rails', '~> 6.0', '>= 6.0.2'
 end
 
+group :test do
+  gem 'database_cleaner', '~> 2.0', '>= 2.0.2'
+  gem 'factory_bot_rails', '~> 6.2'
+  gem 'faker', '~> 3.2'
+  gem 'shoulda-matchers', '~> 5.3'
+  gem 'simplecov', '~> 0.22.0', require: false
+  gem 'webmock', '~> 3.18', '>= 3.18.1'
+end

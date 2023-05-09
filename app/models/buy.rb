@@ -13,12 +13,6 @@ class Buy < ApplicationRecord
     end
   end
 
-  def self.get_three_products_with_the_most_profit_by_category(category)
-    Rails.cache.fetch("get_three_products_with_the_most_profit_by_category", :expires_in => 1.hour) do
-      Buy.most_purchased_products_by_category(category).first(3)
-    end
-  end
-
   private
 
   def send_email_first_buy
