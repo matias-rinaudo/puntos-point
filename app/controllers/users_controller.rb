@@ -3,7 +3,9 @@ class UsersController < ApplicationController
   before_action :find_user, only: [:show, :update, :destroy]
 
   def index
-    @users = User.all
+    Rails.cache.fetch("all_users", expires_in: 2.hours) do
+      @users = User.all
+    end
 
     render json: @users, status: 200 
   end

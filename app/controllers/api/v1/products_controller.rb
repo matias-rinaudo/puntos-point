@@ -5,7 +5,9 @@ class Api::V1::ProductsController < ApplicationController
 
   # GET /products
   def index
-    @products = Product.all
+    Rails.cache.fetch("all_products", expires_in: 2.hours) do
+      @products = Product.all
+    end
 
     render json: @products
   end

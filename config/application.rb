@@ -6,6 +6,8 @@ Bundler.require(*Rails.groups)
 
 module PuntosPoint
   class Application < Rails::Application
+    config.time_zone = 'Buenos Aires'
+    config.active_record.default_timezone = :local
     config.load_defaults 7.0
     config.api_only = true
     config.autoload_paths << Rails.root.join('lib')

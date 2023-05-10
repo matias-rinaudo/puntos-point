@@ -18,6 +18,7 @@ gem 'active_model_serializers', '~> 0.10.13'
 gem 'connection_pool', '~> 2.4'
 
 group :development, :test do
+  gem 'rails-erd', '~> 1.7', '>= 1.7.2'
   gem "byebug"
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem 'rspec-rails', '~> 6.0', '>= 6.0.2'

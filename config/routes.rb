@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       resources :buys do
         get :most_purchased_products_by_category, on: :collection
         get :get_three_products_with_the_most_profit_by_category, on: :collection
+        get :get_total_buys_by_granularity, on: :collection
       end
     end
   end 
